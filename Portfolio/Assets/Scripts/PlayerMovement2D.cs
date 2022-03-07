@@ -8,7 +8,7 @@ public class PlayerMovement2D : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     Vector2 movement;
-    public SpriteRenderer sprite;
+    private bool m_FacingRight = true;
 
     private void Start()
     {
@@ -26,18 +26,21 @@ public class PlayerMovement2D : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * speedMovement * Time.fixedDeltaTime);
         animator.SetFloat("speed", movement.sqrMagnitude);
-        Flip(movement.x);
+
+        if (movement.x > 0 && !m_FacingRight)
+        {
+            Flip();
+        }
+        else if (movement.x < 0 && m_FacingRight)
+        {
+            Flip();
+        }
+       
     }
 
-    void Flip(float velocity)
+    void Flip()
     {
-        if (velocity > 0.1f)
-        {
-            sprite.flipX = false;
-        }
-        else if (velocity < -0.1f)
-        {
-            sprite.flipX = true;
-        }
+        m_FacingRight = !m_FacingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 }
