@@ -54,4 +54,19 @@ public class PlayerHealthController : MonoBehaviour
             UIController.instance.UpdateHealthDisplay();
         }
     }
+
+    public void HealPlayer()
+    {
+        if(currentHealth <= 4)
+        {
+            currentHealth = currentHealth + 2;
+            UIController.instance.UpdateHealthDisplay();
+        }
+        else
+        {
+            currentHealth = maxHealth;
+            UIController.instance.UpdateHealthDisplay();
+        }
+    }
+      
 }

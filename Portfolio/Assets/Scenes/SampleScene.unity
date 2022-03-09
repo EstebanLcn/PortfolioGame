@@ -468,7 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 710411399}
   smoothSpeed: 0.125
-  offset: {x: 0, y: 0, z: -10}
+  offset: {x: 10, y: 0, z: -10}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -496,7 +496,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 11.852843
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -542,6 +542,7 @@ GameObject:
   - component: {fileID: 710411403}
   - component: {fileID: 710411404}
   - component: {fileID: 710411405}
+  - component: {fileID: 710411406}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -728,6 +729,21 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 6
   invicibleLength: 1
+--- !u!114 &710411406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710411397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bc6788465eb4a4691c2df3c1472c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedLength: 5
+  speedCounter: 5
+  movement: {fileID: 710411402}
 --- !u!1 &909476744
 GameObject:
   m_ObjectHideFlags: 0
@@ -36074,6 +36090,7 @@ MonoBehaviour:
   cooldown3: 10
   ability3: 118
   shooting: {fileID: 710411404}
+  speed: {fileID: 710411406}
 --- !u!114 &1932164805
 MonoBehaviour:
   m_ObjectHideFlags: 0

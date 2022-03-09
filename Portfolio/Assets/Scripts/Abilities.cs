@@ -22,6 +22,7 @@ public class Abilities : MonoBehaviour
     public KeyCode ability3;
 
     public Weapon shooting;
+    public PlayerSpeedIncrease speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +65,7 @@ public class Abilities : MonoBehaviour
         {
             isCooldown2 = true;
             abilityImage2.fillAmount = 1;
+            PlayerHealthController.instance.HealPlayer();
         }
 
         if (isCooldown2)
@@ -83,6 +85,7 @@ public class Abilities : MonoBehaviour
         {
             isCooldown3 = true;
             abilityImage3.fillAmount = 1;
+            speed.SpeedPlayer();
         }
 
         if (isCooldown3)
