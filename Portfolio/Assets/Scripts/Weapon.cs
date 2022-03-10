@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
 	public GameObject bulletPrefab;
 	public GameObject abilityPrefab;
 	public GameObject fireFlash;
+	public float speed = 20f;
 
 	// Update is called once per frame
 	void Update()
@@ -21,7 +22,9 @@ public class Weapon : MonoBehaviour
 	public void Shoot()
 	{
 		StartCoroutine(ActivationRoutine());
-		Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		GameObject bulletClone = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		Rigidbody2D rb = bulletClone.GetComponent<Rigidbody2D>();
+		rb.velocity = transform.right * speed;
 	}
 	private IEnumerator ActivationRoutine()
 	{

@@ -4,12 +4,28 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-	public float speed = 20f;
-	public Rigidbody2D rb;
+    public GameObject hitEffect;
+    public int dmg = 5;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Collider2D collider = collision.collider;
+        if (collider.name == "Wall" || collider.name == "Enemy" || collider.name == "FinishPoint")
+        {
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.1f);
+            Destroy(gameObject);
+        }
 
-	// Use this for initialization
-	void Start()
-	{
-		rb.velocity = transform.right * speed;
-	}
+       /* Enemy enemy = collider.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDmg(dmg);
+            Destroy(gameObject);
+        }*/
+    }
+
+    public void Update()
+    {
+        Destroy(GameObject.Find("Bullet(Clone)"), 3);
+    }
 }
