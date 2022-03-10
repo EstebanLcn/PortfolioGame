@@ -203,8 +203,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.6039216, g: 0.47058824, b: 0.61960787, a: 0.09019608}
-      maxColor: {r: 0.9019608, g: 0, b: 1, a: 0.08235294}
+      minColor: {r: 0.47058824, g: 0.4926996, b: 0.61960787, a: 0.09019608}
+      maxColor: {r: 0, g: 0.1639204, b: 1, a: 0.08235294}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5067,8 +5067,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.1882353, g: 0.011764706, b: 0.20784314, a: 0.5019608}
-      maxColor: {r: 0.8666667, g: 0.19215687, b: 0.84705883, a: 0.5019608}
+      minColor: {r: 0.011764709, g: 0.018928954, b: 0.20784314, a: 0.5019608}
+      maxColor: {r: 0.19215685, g: 0.28266326, b: 0.8666667, a: 0.5019608}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5164,7 +5164,7 @@ ParticleSystem:
         m_RotationOrder: 0
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5217,7 +5217,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -9915,7 +9915,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0, g: 0.92156863, b: 1, a: 0.7647059}
+      minColor: {r: 0, g: 0, b: 0, a: 0.7647059}
       maxColor: {r: 0, g: 0.1764706, b: 1, a: 0.67058825}
       maxGradient:
         serializedVersion: 2
@@ -10440,7 +10440,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 5
+      value: 1.82
       mode: 0
       spread: 0
       speed:
@@ -10559,7 +10559,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 8
       minScalar: 10
       maxCurve:
         serializedVersion: 2

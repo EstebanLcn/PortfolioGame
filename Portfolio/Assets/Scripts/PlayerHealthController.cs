@@ -11,7 +11,6 @@ public class PlayerHealthController : MonoBehaviour
     private float invicibleCounter;
 
     private SpriteRenderer theSr;
-
     private void Awake()
     {
         instance = this;
@@ -59,14 +58,23 @@ public class PlayerHealthController : MonoBehaviour
     {
         if(currentHealth <= 4)
         {
+            StartCoroutine(HealColor());
             currentHealth = currentHealth + 2;
             UIController.instance.UpdateHealthDisplay();
         }
         else
         {
+            StartCoroutine(HealColor());
             currentHealth = maxHealth;
             UIController.instance.UpdateHealthDisplay();
         }
     }
-      
+    private IEnumerator HealColor()
+    {
+        theSr.color = new Color(0.02662864f, 0.8301887f, 0.1225607f, 1f);
+        yield return new WaitForSeconds(1f);
+        theSr.color = new Color(1f, 1f, 1f, 1f);
+    }
 }
+      
+
