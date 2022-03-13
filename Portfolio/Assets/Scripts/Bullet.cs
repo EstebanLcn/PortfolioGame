@@ -6,22 +6,24 @@ public class Bullet : MonoBehaviour
 {
     public GameObject hitEffect;
     public int dmg = 5;
+    public GameObject explosion;
+    //public GameObject explosionTwo;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D collider = collision.collider;
-        if (collider.name == "Wall" || collider.name == "Enemy" || collider.name == "FinishPoint")
+        if (collider.name == "Wall" || collider.name == "Boss")
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.1f);
             Destroy(gameObject);
         }
-
-       /* Enemy enemy = collider.GetComponent<Enemy>();
-        if (enemy != null)
+        Boss boss = collider.GetComponent<Boss>();
+        if(boss != null)
         {
-            enemy.TakeDmg(dmg);
-            Destroy(gameObject);
-        }*/
+            boss.TakeDmg(dmg);
+            Instantiate(explosion, transform.position, Quaternion.identity);
+           // Instantiate(explosionTwo, transform.position, Quaternion.identity);
+        }
     }
 
     public void Update()

@@ -146,3 +146,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 4404547812265405059, guid: a5483ab9e8eb73846b3e280cbe4ac194, type: 3}
   dmg: 5
+  explosion: {fileID: 1900874806143164, guid: b80facb177b4da240bfe5aba5c167dbb, type: 3}
+  explosionTwo: {fileID: 1214371818292734, guid: 9729eaea1688abb458d3e03d6ce31a08, type: 3}
