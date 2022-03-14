@@ -22,7 +22,7 @@ public class MoveWave : MonoBehaviour
 
     void moveWord()
     {
-        pos += transform.right * Time.deltaTime * moveSpeed;
+        pos -= transform.right * Time.deltaTime * moveSpeed;
         transform.position = pos + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
     }
 }

@@ -118,6 +118,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c3097c205387f46b9d2bd6ec380d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 5288580155377746368, guid: b242c12908095de4a9354d517293dddd, type: 3}
+  spawnPoint: {fileID: 0}
+  words:
+  - {fileID: 3693522872943670799, guid: 82c32228c7ea65848bcd7b948a2f1bbd, type: 3}
+  - {fileID: 2327600348328934923, guid: 020a10a25f804424eb4e55ee3c29ea41, type: 3}
+  - {fileID: 8225880685819972079, guid: d86731137628d1845802f1ad4b9754b5, type: 3}
+  - {fileID: 2480409745027400458, guid: 57313c34e823f4e43b7fd43f043af1d0, type: 3}
+  - {fileID: 3176030776206867314, guid: 52bd1fb5f55ab2a45b616947126a085e, type: 3}
+  - {fileID: 2211817541304697214, guid: c88cfb4a48eee934c97b99ba888269a7, type: 3}
+  - {fileID: 4031590042515629598, guid: 0604634689aeeab44b90e4fe2ddb08ac, type: 3}
+  - {fileID: 5684253432630988219, guid: adf35c791adc75242993301ac0254022, type: 3}
+  - {fileID: 8360096002071517191, guid: 5407c1ccb5cc0d44c9fcc6577f376d2d, type: 3}
+  - {fileID: 6201042502953586321, guid: 913930f516fd36a46a244914f70f6ca8, type: 3}
+  - {fileID: 4225112598417908229, guid: 3a7c3dd6c7133014b833cb8d0af92612, type: 3}
+  _startTimeBetweenSpawn: 2
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -132,7 +147,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 50
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
