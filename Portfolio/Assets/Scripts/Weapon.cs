@@ -6,7 +6,6 @@ public class Weapon : MonoBehaviour
 {
 	public Transform firePoint;
 	public GameObject bulletPrefab;
-	public GameObject node;
 	public GameObject abilityPrefab;
 	public GameObject fireFlash;
 	public float speed = 20f;
@@ -18,10 +17,6 @@ public class Weapon : MonoBehaviour
 		{
 			Shoot();
 		}
-		else if (Input.GetButtonDown("Fire2"))
-        {
-			Shoot2();
-        }
 	}
 
 	public void Shoot()
@@ -30,10 +25,6 @@ public class Weapon : MonoBehaviour
 		GameObject bulletClone = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		Rigidbody2D rb = bulletClone.GetComponent<Rigidbody2D>();
 		rb.velocity = transform.right * speed;
-	}
-	public void Shoot2()
-	{
-		GameObject bulletClone = Instantiate(node, firePoint.position, firePoint.rotation);
 	}
 	private IEnumerator ActivationRoutine()
 	{

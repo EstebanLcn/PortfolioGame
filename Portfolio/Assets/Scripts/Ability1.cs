@@ -7,7 +7,7 @@ public class Ability1 : MonoBehaviour
     public GameObject hitEffect;
     public float speed = 20f;
     public Rigidbody2D rb;
-    public int dmg = 5;
+    public int dmg = 12;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +16,16 @@ public class Ability1 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D collider = collision.collider;
-        if (collider.name == "Wall" || collider.name == "Enemy" || collider.name == "FinishPoint")
+        if (collider.name == "Wall" || collider.name == "Boss")
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.1f);
             Destroy(gameObject);
         }
-
-        /* Enemy enemy = collider.GetComponent<Enemy>();
-         if (enemy != null)
-         {
-             enemy.TakeDmg(dmg);
-             Destroy(gameObject);
-         }*/
+        Boss boss = collider.GetComponent<Boss>();
+        if (boss != null)
+        {
+            boss.TakeDmg(dmg);
+        }
     }
 }

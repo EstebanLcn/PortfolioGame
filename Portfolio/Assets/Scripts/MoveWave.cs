@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MoveWave : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float frequency = 20f;
-    public float magnitude = 0.5f;
+    private float moveSpeed = 4.5f;
+    private float frequency = 10f;
+    private float magnitude = 0.8f;
     Vector3 pos;
     // Start is called before the first frame update
     void Start()
