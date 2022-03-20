@@ -477,7 +477,9 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 4169780872578336851}
+  - {fileID: 9214741990839158005}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -546,6 +548,20 @@ MonoBehaviour:
   words:
   - {fileID: 5645753212412855300, guid: 1892e37a7649aaa49a59005ef3c56709, type: 3}
   _startTimeBetweenSpawn: 1.5
+--- !u!114 &4169780872578336851
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a3be7a68296964a8c51766d9fbb79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0, g: 0, b: 0, a: 0}
+  endColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1102 &4676976185354531655
 AnimatorState:
   serializedVersion: 6
@@ -622,3 +638,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &9214741990839158005
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0557a437dbc45d5408f9758a04aad3cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 5531899863687687320, guid: b242c12908095de4a9354d517293dddd, type: 3}
+  spawnPoint: {fileID: 6240124248876154819, guid: 66f456e5adbf0e94bad61ee324266c9c, type: 3}
+  words:
+  - {fileID: 659517479826487732, guid: 4c23d8e82d45c4f43b75c0d9b347f972, type: 3}
+  _startTimeBetweenSpawn: 2
