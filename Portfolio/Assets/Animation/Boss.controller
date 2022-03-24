@@ -562,6 +562,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0, g: 0, b: 0, a: 0}
   endColor: {r: 0, g: 0, b: 0, a: 0}
+  jobRole:
+  - {fileID: 7074567781692815548, guid: 15261420ab30dab41b9aafb661fd10cb, type: 3}
+  - {fileID: 2781121112794695889, guid: 31551b9f70e3ae84fbabf042c5b10a2a, type: 3}
+  - {fileID: 306376737137399992, guid: 024efff9f93439d4da3d2abcc6dc53b9, type: 3}
+  jobLocation:
+  - {fileID: 6952968931597476460, guid: 113bf6f02ce5e9b46a9ea30b56e62b34, type: 3}
+  - {fileID: 5480504568533150772, guid: b552e6ceefa3a1e4a8ba40a530b4ad84, type: 3}
+  - {fileID: 7739545512323192401, guid: d2933b36efaaac543a1f8e131010e9ed, type: 3}
+  jobMission:
+  - {fileID: 3181931532443560521, guid: 4cabab0efb3ff2e498d1b96b2bc8cba9, type: 3}
+  - {fileID: 8076165793397166675, guid: e3686d809c9dc7440bda283c15d4e670, type: 3}
+  - {fileID: 8622908968766474365, guid: 54f0670c483f67e4689aa6c1688ac142, type: 3}
+  spawner:
+  - {fileID: 5550350025672495679, guid: 98603836f4a609d49ac1b9aa01f8d98a, type: 3}
+  - {fileID: 7533989517266197099, guid: 4c60a5b8e64fd9d46b6502115b666be4, type: 3}
+  - {fileID: 8919053289126490896, guid: a1499aba560425843ad51d94a0499a33, type: 3}
+  circleOutside: {fileID: 7548121131294687867, guid: 7bd681d0381b54f41ba0abbce107c405, type: 3}
 --- !u!1102 &4676976185354531655
 AnimatorState:
   serializedVersion: 6

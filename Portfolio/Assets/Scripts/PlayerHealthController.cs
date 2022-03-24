@@ -9,7 +9,7 @@ public class PlayerHealthController : MonoBehaviour
 
     public float invicibleLength;
     private float invicibleCounter;
-
+    public bool isInvincible = false;
     private SpriteRenderer theSr;
     private void Awake()
     {
@@ -36,21 +36,24 @@ public class PlayerHealthController : MonoBehaviour
 
     public void DealDamage()
     {
-        if (invicibleCounter <= 0)
+        if (!isInvincible)
         {
-            currentHealth -= 1;
+            if (invicibleCounter <= 0)
+            {
+                currentHealth -= 1;
 
-            if (currentHealth <= 0)
-            {
-                currentHealth = 0;
-                gameObject.SetActive(false);
+                if (currentHealth <= 0)
+                {
+                    currentHealth = 0;
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    invicibleCounter = invicibleLength;
+                    theSr.color = new Color(theSr.color.r, theSr.color.g, theSr.color.b, .5f);
+                }
+                UIController.instance.UpdateHealthDisplay();
             }
-            else
-            {
-                invicibleCounter = invicibleLength;
-                theSr.color = new Color(theSr.color.r, theSr.color.g, theSr.color.b, .5f);
-            }
-            UIController.instance.UpdateHealthDisplay();
         }
     }
 
@@ -74,6 +77,11 @@ public class PlayerHealthController : MonoBehaviour
         theSr.color = new Color(0.02662864f, 0.8301887f, 0.1225607f, 1f);
         yield return new WaitForSeconds(1f);
         theSr.color = new Color(1f, 1f, 1f, 1f);
+    }
+
+    public void InviciblePlayer()
+    {
+        isInvincible = true;
     }
 }
       

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine.Tilemaps;
 public class Boss_Phase2 : StateMachineBehaviour
 {
     float timeLeft;
+    float timeLeftEnd;
+    float timeLeftReset;
+
     Color targetColor;
     int i = 0;
 
@@ -13,6 +17,28 @@ public class Boss_Phase2 : StateMachineBehaviour
     public Color endColor;
     GameObject originalGameObject;
     GameObject child;
+    private bool canInstantiate = true;
+
+    public GameObject[] jobRole;
+    public GameObject[] jobLocation;
+    public GameObject[] jobMission;
+    public Transform[] spawner;
+
+    public GameObject circleOutside;
+
+    private GameObject jobRoleToDestroyed;
+    private GameObject jobLocationToDestroyed;
+    private GameObject jobMissionToDestroyed;
+
+    private GameObject circleOutside1;
+    private GameObject circleOutside2;
+    private GameObject circleOutside3;
+
+
+    private int index = 0;
+    private bool isDmg = false;
+    private bool isWaitReset = true;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -26,32 +52,96 @@ public class Boss_Phase2 : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Tilemap tilemap = GameObject.Find("Ground").GetComponent<Tilemap>();
-        if (i < 15)
+        if (isWaitReset)
         {
-            if (timeLeft <= Time.deltaTime)
+            if (i < 15)
             {
-                // transition complete
-                // assign the target color
-                tilemap.color = targetColor;
+                if (canInstantiate)
+                {
+                    jobRoleToDestroyed = Instantiate(jobRole[index], new Vector2(spawner[index].position.x, spawner[index].position.y), Quaternion.identity);
+                    circleOutside1 = Instantiate(circleOutside, new Vector2(spawner[index].position.x, spawner[index].position.y), Quaternion.identity);
+                    jobLocationToDestroyed = Instantiate(jobLocation[index], new Vector2(spawner[index].position.x - 6f, spawner[index].position.y - 7f), Quaternion.identity);
+                    circleOutside2 = Instantiate(circleOutside, new Vector2(spawner[index].position.x - 6f, spawner[index].position.y - 7f), Quaternion.identity);
+                    jobMissionToDestroyed = Instantiate(jobMission[index], new Vector2(spawner[index].position.x, spawner[index].position.y - 14f), Quaternion.identity);
+                    circleOutside3 = Instantiate(circleOutside, new Vector2(spawner[index].position.x, spawner[index].position.y - 14f), Quaternion.identity);
+                    canInstantiate = false;
+                }
+                if (timeLeft <= Time.deltaTime)
+                {
+                    // transition complete
+                    // assign the target color
+                    tilemap.color = targetColor;
 
-                // start a new transition
-                targetColor = i%2 == 0 ? startColor : endColor;
-                timeLeft = 0.7f;
-                i++;
+                    // start a new transition
+                    targetColor = i % 2 == 0 ? startColor : endColor;
+                    timeLeft = 0.7f;
+                    i++;
+                }
+                else
+                {
+                    // transition in progress
+                    // calculate interpolated color
+                    tilemap.color = Color.Lerp(tilemap.color, targetColor, Time.deltaTime / timeLeft);
+
+                    // update the timer
+                    timeLeft -= Time.deltaTime;
+                }
             }
             else
             {
-                // transition in progress
-                // calculate interpolated color
-                tilemap.color = Color.Lerp(tilemap.color, targetColor, Time.deltaTime / timeLeft);
+                if (!isDmg)
+                {
+                    if (timeLeftEnd <= Time.deltaTime)
+                    {
+                        child.SetActive(!child.activeSelf);
+                        timeLeftEnd = 1.5f;
+                        if (child.activeSelf == false)
+                        {
+                            isDmg = true;
+                        }
+                    }
+                    else
+                    {
+                        timeLeftEnd -= Time.deltaTime;
+                    }
+                }
+                else
+                {
+                    Destroy(jobRoleToDestroyed, 0.1f);
+                    Destroy(circleOutside1, 0.1f);
+                    Destroy(jobLocationToDestroyed, 0.1f);
+                    Destroy(circleOutside2, 0.1f);
+                    Destroy(jobMissionToDestroyed, 0.1f);
+                    Destroy(circleOutside3, 0.1f);
+                    i = 0;
+                    canInstantiate = true;
+                    isDmg = false;
+                    isWaitReset = false;
+                    timeLeftReset = 2f;
+                    if (index == 2)
+                    {
+                        index = 0;
+                    }
+                    else
+                    {
+                        index++;
+                    }
+                }
+                //animator.GetComponent<WaitScript>().Wait();
+                //child.SetActive(false);
 
-                // update the timer
-                timeLeft -= Time.deltaTime;
             }
         }
         else
         {
-            child.SetActive(true);
+            if (timeLeftReset <= Time.deltaTime)
+            {
+                isWaitReset = true;
+            }
+            else
+            {
+                timeLeftReset -= Time.deltaTime;
+            }
         }
     }
 
