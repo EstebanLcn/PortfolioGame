@@ -6,7 +6,8 @@ public class BossPhase2_5 : StateMachineBehaviour
     private string textUI = "BOSS PHASE SOFT SKILLS";
     GameObject originalGameObject;
     GameObject child;
-
+    GameObject childSlider;
+    GameObject player;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -15,12 +16,21 @@ public class BossPhase2_5 : StateMachineBehaviour
         originalGameObject = GameObject.Find("Canvas");
         child = originalGameObject.transform.GetChild(8).gameObject;
         child.SetActive(true);
+        Camera m_OrthographicCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        m_OrthographicCamera.orthographicSize = 7.0f;
+        CameraFollow.instance.offset = new Vector3(0, 0, -10);
+        GameObject boss = GameObject.Find("Boss");
+        //boss.transform.position = new Vector3(150,0,0);
+        childSlider = originalGameObject.transform.GetChild(6).gameObject;
+        childSlider.SetActive(false);
+        PlayerMovement2D.instance.enableY = false;
+        player = GameObject.Find("Player");
+        player.transform.position = new Vector3(0, 0, 0);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Yea");
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

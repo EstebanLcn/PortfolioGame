@@ -9,7 +9,13 @@ public class PlayerMovement2D : MonoBehaviour
     public Animator animator;
     Vector2 movement;
     private bool m_FacingRight = true;
+    public static PlayerMovement2D instance;
+    public bool enableY = true;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -19,7 +25,14 @@ public class PlayerMovement2D : MonoBehaviour
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (enableY)
+        {
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
+        else
+        {
+            movement.y = 0f;
+        }
     }
 
     void FixedUpdate()
