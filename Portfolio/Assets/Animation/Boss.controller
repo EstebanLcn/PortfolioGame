@@ -84,7 +84,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 305
+    m_EventTreshold: 395
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4960085071939246357}
   m_Solo: 0
@@ -161,7 +161,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 290
+    m_EventTreshold: 390
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1479957324690562198}
   m_Solo: 0
@@ -186,7 +186,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 410
+    m_EventTreshold: 420
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 950826379068277452}
   m_Solo: 0
@@ -375,7 +375,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 340
+    m_EventTreshold: 400
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2433113736732875690}
   m_Solo: 0
@@ -573,6 +573,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2ece2c3b5d1b340b8d5c205a35e9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  words:
+  - {fileID: 6021747031389043190, guid: acc3f2a42c1e081448d7bfc55403829c, type: 3}
+  - {fileID: 3784540798554716114, guid: 4dac773cb278358449bcc12707b622a4, type: 3}
+  - {fileID: 4702622092401456944, guid: 3b2f564e8b9364d469a35fa65d51f123, type: 3}
+  - {fileID: 4885861057404101364, guid: 90accce1cb77fd341b6e3d5bad37c75d, type: 3}
+  - {fileID: 1311017766284018224, guid: 4b5c95767c8424d42aa4fad2c2eb72e0, type: 3}
+  - {fileID: 5314872886975141316, guid: a44b69031eb97944bbfe887f3f062c6c, type: 3}
+  _startTimeBetweenSpawn: 6
+  spawnPointLeft: {fileID: 3233836757113917670, guid: 0e360d693010dfc40a0ecf42ef2dc904, type: 3}
+  spawnPointRight: {fileID: 918784699940857607, guid: 3a71e35011cdb7b41b72975c6d9195da, type: 3}
 --- !u!114 &3584474626629568206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -631,7 +641,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 90
+    m_EventTreshold: 380
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4037092714914707744}
   m_Solo: 0
