@@ -11,10 +11,14 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D collider = collision.collider;
-        if (collider.name == "Wall" || collider.name == "Boss")
+        if (collider.name == "Wall" || collider.name == "Boss" || collider.gameObject.layer == LayerMask.NameToLayer("SoftSkills"))
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.1f);
+            Destroy(gameObject);
+        }
+        else if(collider.name == "Player" || collider.name == "Bullet" || collider.name == "ThunderSpell" || collider.name == "Bullet(Clone)" || collider.name == "ThunderSpell(Clone)")
+        {
             Destroy(gameObject);
         }
         Boss boss = collider.GetComponent<Boss>();
@@ -24,10 +28,16 @@ public class Bullet : MonoBehaviour
             Instantiate(explosion, transform.position, Quaternion.identity);
            // Instantiate(explosionTwo, transform.position, Quaternion.identity);
         }
+        SoftSkills softSkills = collider.GetComponent<SoftSkills>();
+        if(softSkills != null)
+        {
+            softSkills.TakeDmg(dmg);
+            Instantiate(explosion, transform.position, Quaternion.identity);
+        }
     }
 
     public void Update()
     {
-        Destroy(GameObject.Find("Bullet(Clone)"), 3);
+        Destroy(GameObject.Find("Bullet(Clone)"), 2f);
     }
 }

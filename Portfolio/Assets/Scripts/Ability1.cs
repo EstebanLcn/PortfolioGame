@@ -16,7 +16,7 @@ public class Ability1 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D collider = collision.collider;
-        if (collider.name == "Wall" || collider.name == "Boss")
+        if (collider.name == "Wall" || collider.name == "Boss" || collider.gameObject.layer == LayerMask.NameToLayer("SoftSkills"))
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.1f);
@@ -26,6 +26,11 @@ public class Ability1 : MonoBehaviour
         if (boss != null)
         {
             boss.TakeDmg(dmg);
+        }
+        SoftSkills softSkills = collider.GetComponent<SoftSkills>();
+        if (softSkills != null)
+        {
+            softSkills.TakeDmg(dmg);
         }
     }
 }

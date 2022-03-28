@@ -19,6 +19,10 @@ public class BossPhase2_5 : StateMachineBehaviour
     public Transform spawnPointLeft;
     public Transform spawnPointRight;
 
+    public Animator animator;
+    private Camera m_OrthographicCamera;
+
+    public GameObject boss;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -27,7 +31,7 @@ public class BossPhase2_5 : StateMachineBehaviour
         originalGameObject = GameObject.Find("Canvas");
         child = originalGameObject.transform.GetChild(8).gameObject;
         child.SetActive(true);
-        Camera m_OrthographicCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        m_OrthographicCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         m_OrthographicCamera.orthographicSize = 7.0f;
         CameraFollow.instance.offset = new Vector3(0, 0, -10);
         childSlider = originalGameObject.transform.GetChild(6).gameObject;
@@ -36,14 +40,14 @@ public class BossPhase2_5 : StateMachineBehaviour
         player = GameObject.Find("Player");
         player.transform.position = new Vector3(0, 0, 0);
         MoveBoss.instance.enableMovement = false;
-        GameObject boss = GameObject.Find("Boss");
+        boss = GameObject.Find("Boss");
         boss.transform.position = new Vector3(150, 0, 0);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_timeBetweenSpawn <= 0)
+        if (_timeBetweenSpawn <= 0 && counter !=6)
         {
             if(counter % 2 == 0)
             {
@@ -66,15 +70,24 @@ public class BossPhase2_5 : StateMachineBehaviour
         Destroy(_objectToBeDestroyed, _destroyTime);
         if (counter == 6)
         {
-            counter = 0;
+            if(_timeBetweenSpawn <= 0)
+            {
+                Boss.instance.setTriggerSkills();
+            }
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        child.SetActive(false);
+        m_OrthographicCamera.orthographicSize = 11.85284f;
+        CameraFollow.instance.offset = new Vector3(7, 0, -10);
+        childSlider.SetActive(true);
+        PlayerMovement2D.instance.enableY = true;
+        MoveBoss.instance.enableMovement = true;
+        boss.transform.position = new Vector3(16.97f, 1.89f, 0);
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
