@@ -9,11 +9,16 @@ public class Weapon : MonoBehaviour
 	public GameObject abilityPrefab;
 	public GameObject fireFlash;
 	public float speed = 20f;
-
-	// Update is called once per frame
-	void Update()
+	public static Weapon instance;
+	public bool canShoot = true;
+    private void Start()
+    {
+		instance = this;
+    }
+    // Update is called once per frame
+    void Update()
 	{
-		if (Input.GetButtonDown("Fire1"))
+		if (Input.GetButtonDown("Fire1") && canShoot)
 		{
 			Shoot();
 		}

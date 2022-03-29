@@ -84,8 +84,6 @@ public class BossPhase2_5 : StateMachineBehaviour
         m_OrthographicCamera.orthographicSize = 11.85284f;
         CameraFollow.instance.offset = new Vector3(7, 0, -10);
         childSlider.SetActive(true);
-        PlayerMovement2D.instance.enableY = true;
-        MoveBoss.instance.enableMovement = true;
         boss.transform.position = new Vector3(16.97f, 1.89f, 0);
     }
 

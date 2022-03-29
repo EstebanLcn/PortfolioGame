@@ -11,6 +11,7 @@ public class PlayerMovement2D : MonoBehaviour
     private bool m_FacingRight = true;
     public static PlayerMovement2D instance;
     public bool enableY = true;
+    public bool enableX = true;
 
     private void Awake()
     {
@@ -24,7 +25,14 @@ public class PlayerMovement2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
+        if (enableX)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+        }
+        else
+        {
+            movement.x = 0f;
+        }
         if (enableY)
         {
             movement.y = Input.GetAxisRaw("Vertical");

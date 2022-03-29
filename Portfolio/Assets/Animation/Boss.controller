@@ -240,6 +240,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d94bcc4e923e8a44a530c5c586afd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  star: {fileID: 2623723657759156427, guid: a6f6360e5b0c2004fbf53b0a49af551d, type: 3}
+  timeLeftForStar: 5
+  timeLeftBetweenSpawn: 2
+  canPointEffect: 0
+  pointEffect:
+  - {fileID: 624996712078631452, guid: e44c91eec049e70478bd9e0a9aa4aea2, type: 3}
+  - {fileID: 496721477862036588, guid: bb9268ec132d6944a9ef9a9597441870, type: 3}
+  - {fileID: 5277402599590343916, guid: 5ce4daef77ecdbd4ab193abb61301a6b, type: 3}
+  - {fileID: 8638980914887030741, guid: 3e06919ba0326c143ab54a3ae749f6ad, type: 3}
+  - {fileID: 7782341517132885883, guid: c7c5c1dc3b4c46a46ae3b678a78ba06d, type: 3}
+  - {fileID: 921191464919437865, guid: 573c679fc3ee59f499b1d7a36d91272e, type: 3}
+  - {fileID: 1421156643173321606, guid: 416def82d7b16794b95e64ada915170c, type: 3}
+  - {fileID: 8507967176223410296, guid: 43333ce342c85c240924b21121ba68bb, type: 3}
+  - {fileID: 6566438467549662517, guid: 7317885a9c54b4940b09e853b62735f4, type: 3}
+  - {fileID: 5716448216285407852, guid: 3b5083500bedbe6418c4073b6f30aea0, type: 3}
+  - {fileID: 3962054444095130516, guid: 5c5f3ec51318f494cb0014f3f85472a1, type: 3}
 --- !u!1102 &-4709238125138663824
 AnimatorState:
   serializedVersion: 6
@@ -494,13 +510,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 50
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: finishSkills
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -654,7 +670,7 @@ MonoBehaviour:
   - {fileID: 4885861057404101364, guid: 90accce1cb77fd341b6e3d5bad37c75d, type: 3}
   - {fileID: 1311017766284018224, guid: 4b5c95767c8424d42aa4fad2c2eb72e0, type: 3}
   - {fileID: 5314872886975141316, guid: a44b69031eb97944bbfe887f3f062c6c, type: 3}
-  _startTimeBetweenSpawn: 6
+  _startTimeBetweenSpawn: 1
   spawnPointLeft: {fileID: 3233836757113917670, guid: 0e360d693010dfc40a0ecf42ef2dc904, type: 3}
   spawnPointRight: {fileID: 918784699940857607, guid: 3a71e35011cdb7b41b72975c6d9195da, type: 3}
   animator: {fileID: 0}
