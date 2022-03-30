@@ -21,6 +21,8 @@ public class Boss_Phase3 : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Text txt = GameObject.Find("Canvas/BossPhaseName").GetComponent<Text>();
+        txt.text = "";
         PlayerMovement2D.instance.enableX = false;
         player = GameObject.Find("Player");
         player.transform.position = new Vector3(-8.6f, 0, 0);
@@ -98,6 +100,10 @@ public class Boss_Phase3 : StateMachineBehaviour
                     if(counterShake == 5)
                     {
                         CameraShake.instance.setTriggerShake();
+                    }
+                    if(counterShake == 10)
+                    {
+                        LevelChanger.instance.FadeToLevel(1);
                     }
                 }
                 
