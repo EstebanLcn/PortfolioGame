@@ -16,7 +16,7 @@ public class Boss_Phase3 : StateMachineBehaviour
     GameObject player;
     private bool canStar = true;
     private bool canLaser = true;
-
+    public GameObject explosionLaser;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -34,7 +34,7 @@ public class Boss_Phase3 : StateMachineBehaviour
             if (timeLeftBetweenSpawn <= Time.deltaTime)
             {
                     _objectToBeDestroyed = Instantiate(pointEffect[counter]);
-                    timeLeftBetweenSpawn = 2f;
+                    timeLeftBetweenSpawn = 1f;
                     counter++;
             }
             else
@@ -72,6 +72,21 @@ public class Boss_Phase3 : StateMachineBehaviour
                         _objectToBeDestroyed = Instantiate(pointEffect[9]);
                         _objectToBeDestroyed = Instantiate(pointEffect[10]);
                         canLaser = false;
+                        timeLeftBetweenSpawn = 0.5f;
+                        PlayerHealthController.instance.Die();
+                    }
+                    else
+                    {
+                        timeLeftBetweenSpawn -= Time.deltaTime;
+                    }
+                    Destroy(_objectToBeDestroyed, _destroyTime);
+                }
+                else
+                {
+                    if(timeLeftBetweenSpawn <= Time.deltaTime)
+                    {
+                        _objectToBeDestroyed = Instantiate(explosionLaser, new Vector2(Random.Range(0, 0 - 20f), Random.Range(0 - 10f, 0 + 10f)), Quaternion.identity);
+                        timeLeftBetweenSpawn = 0.5f;
                     }
                     else
                     {

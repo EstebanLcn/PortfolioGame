@@ -256,6 +256,7 @@ MonoBehaviour:
   - {fileID: 6566438467549662517, guid: 7317885a9c54b4940b09e853b62735f4, type: 3}
   - {fileID: 5716448216285407852, guid: 3b5083500bedbe6418c4073b6f30aea0, type: 3}
   - {fileID: 3962054444095130516, guid: 5c5f3ec51318f494cb0014f3f85472a1, type: 3}
+  explosionLaser: {fileID: 4300223551614813064, guid: 6eabc274d8bb7884a996212d7ed7e1ff, type: 3}
 --- !u!1102 &-4709238125138663824
 AnimatorState:
   serializedVersion: 6
@@ -640,7 +641,7 @@ AnimatorStateMachine:
     m_Position: {x: 660, y: 460, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6010760077022675676}
-    m_Position: {x: 350, y: 480, z: 0}
+    m_Position: {x: 350, y: 490, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

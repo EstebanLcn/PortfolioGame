@@ -83,6 +83,12 @@ public class PlayerHealthController : MonoBehaviour
     {
         isInvincible = true;
     }
+    public void Die()
+    {
+        currentHealth = 0;
+        gameObject.SetActive(false);
+        UIController.instance.UpdateHealthDisplay();
+    }
 }
       
 
