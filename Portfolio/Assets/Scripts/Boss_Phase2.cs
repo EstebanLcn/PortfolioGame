@@ -138,9 +138,6 @@ public class Boss_Phase2 : StateMachineBehaviour
                         index++;
                     }
                 }
-                //animator.GetComponent<WaitScript>().Wait();
-                //child.SetActive(false);
-
             }
         }
         else
