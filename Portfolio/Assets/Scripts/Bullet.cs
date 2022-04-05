@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D collider = collision.collider;
-        if (collider.name == "Wall" || collider.name == "Boss" || collider.gameObject.layer == LayerMask.NameToLayer("SoftSkills"))
+        if (collider.name == "Wall" || collider.name == "Boss" || collider.name == "BossLast" || collider.gameObject.layer == LayerMask.NameToLayer("SoftSkills"))
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.1f);
@@ -22,16 +22,31 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         Boss boss = collider.GetComponent<Boss>();
-        if(boss != null)
+        if (boss != null)
         {
             boss.TakeDmg(dmg);
             Instantiate(explosion, transform.position, Quaternion.identity);
-           // Instantiate(explosionTwo, transform.position, Quaternion.identity);
         }
         SoftSkills softSkills = collider.GetComponent<SoftSkills>();
         if(softSkills != null)
         {
             softSkills.TakeDmg(dmg);
+            Instantiate(explosion, transform.position, Quaternion.identity);
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "BossLast")
+        {
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.1f);
+            Destroy(gameObject);
+        }
+        BossLast bossLast = collision.GetComponent<BossLast>();
+        if (bossLast != null)
+        {
+            bossLast.TakeDmg(dmg);
             Instantiate(explosion, transform.position, Quaternion.identity);
         }
     }

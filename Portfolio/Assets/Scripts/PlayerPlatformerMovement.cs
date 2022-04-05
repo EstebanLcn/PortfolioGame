@@ -7,7 +7,6 @@ public class PlayerPlatformerMovement : MonoBehaviour
     public static PlayerPlatformerMovement instance;
     public float moveSpeed;
     public Rigidbody2D theRB;
-    public float jumpForce;
     private bool m_FacingRight = true;
 
 
