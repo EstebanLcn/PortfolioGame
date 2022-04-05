@@ -18,10 +18,21 @@ public class PlayerSpeedIncrease : MonoBehaviour
 
     private IEnumerator Wait()
     {
-        movement.speedMovement = 10;
-        theSr.color = new Color(1f, 0.2153054f, 0.1830188f, 1f);       
-        yield return new WaitForSeconds(2f);
-        theSr.color = new Color(1f, 1f, 1f, 1f);
-        movement.speedMovement = 5;
+        if (PlayerPlatformerMovement.instance)
+        {
+            PlayerPlatformerMovement.instance.moveSpeed = 12;
+            theSr.color = new Color(1f, 0.2153054f, 0.1830188f, 1f);
+            yield return new WaitForSeconds(2f);
+            theSr.color = new Color(1f, 1f, 1f, 1f);
+            PlayerPlatformerMovement.instance.moveSpeed = 8;
+        }
+        else
+        {
+            movement.speedMovement = 10;
+            theSr.color = new Color(1f, 0.2153054f, 0.1830188f, 1f);
+            yield return new WaitForSeconds(2f);
+            theSr.color = new Color(1f, 1f, 1f, 1f);
+            movement.speedMovement = 5;
+        }       
     }
 }
