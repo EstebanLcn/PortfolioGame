@@ -9,6 +9,7 @@ public class BossLast : MonoBehaviour
     public Slider healthBar;
     private SpriteRenderer theSr;
     public Animator animator;
+    public GameObject spawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class BossLast : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        spawn.SetActive(false);
     }
     private IEnumerator Wait()
     {

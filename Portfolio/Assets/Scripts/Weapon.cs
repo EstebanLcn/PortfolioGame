@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
 	public GameObject bulletPrefab;
 	public GameObject abilityPrefab;
 	public GameObject fireFlash;
-	public float speed = 20f;
+	public float speed = 30f;
 	public static Weapon instance;
 	public bool canShoot = true;
     private void Start()

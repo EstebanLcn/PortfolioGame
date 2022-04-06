@@ -20,11 +20,11 @@ public class PlayerSpeedIncrease : MonoBehaviour
     {
         if (PlayerPlatformerMovement.instance)
         {
-            PlayerPlatformerMovement.instance.moveSpeed = 35;
+            PlayerPlatformerMovement.instance.moveSpeed = 30;
             theSr.color = new Color(1f, 0.2153054f, 0.1830188f, 1f);
             yield return new WaitForSeconds(2f);
             theSr.color = new Color(1f, 1f, 1f, 1f);
-            PlayerPlatformerMovement.instance.moveSpeed = 25;
+            PlayerPlatformerMovement.instance.moveSpeed = 20;
         }
         else
         {

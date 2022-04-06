@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D collider = collision.collider;
-        if (collider.name == "Wall" || collider.name == "Boss" || collider.name == "BossLast" || collider.gameObject.layer == LayerMask.NameToLayer("SoftSkills"))
+        if (collider.name == "Wall" || collider.name == "Boss" || collider.gameObject.layer == LayerMask.NameToLayer("SoftSkills"))
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.1f);
