@@ -103,7 +103,7 @@ public class Boss_Phase3 : StateMachineBehaviour
                     }
                     if(counterShake == 10)
                     {
-                        LevelChanger.instance.FadeToLevel(1);
+                        LevelChanger.instance.FadeToLevel(2);
                     }
                 }
                 
