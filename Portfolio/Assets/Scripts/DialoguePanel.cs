@@ -58,7 +58,13 @@ public class DialoguePanel : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            SceneManager.LoadScene("ScenePlatformer");
+            if(SceneManager.GetActiveScene().name == "Scene2To3")
+            {
+                SceneManager.LoadScene("ScenePlatformer");
+            }else if(SceneManager.GetActiveScene().name == "FinishScene")
+            {
+                SceneManager.LoadScene("SceneFirst");
+            }
         }
     }
 }
