@@ -10,6 +10,8 @@ public class BossLast : MonoBehaviour
     private SpriteRenderer theSr;
     public Animator animator;
     public GameObject spawn;
+    public GameObject megaExplosion;
+    public GameObject gem;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,8 @@ public class BossLast : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        Instantiate(megaExplosion, gameObject.transform.position, Quaternion.identity);
+        Instantiate(gem, gameObject.transform.position, Quaternion.identity);
         spawn.SetActive(false);
     }
     private IEnumerator Wait()
