@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -44,8 +45,7 @@ public class PlayerHealthController : MonoBehaviour
 
                 if (currentHealth <= 0)
                 {
-                    currentHealth = 0;
-                    gameObject.SetActive(false);
+                   Die();
                 }
                 else
                 {
@@ -88,6 +88,8 @@ public class PlayerHealthController : MonoBehaviour
         currentHealth = 0;
         gameObject.SetActive(false);
         UIController.instance.UpdateHealthDisplay();
+        SceneManager.LoadScene("GameOverScene");
+        GameOverScreen.currentScene = SceneManager.GetActiveScene().name;
     }
 }
       
