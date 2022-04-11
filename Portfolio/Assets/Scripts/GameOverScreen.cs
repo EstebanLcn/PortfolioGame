@@ -10,7 +10,6 @@ public class GameOverScreen : MonoBehaviour
 
     public void RestartButton()
     {
-        Debug.Log(currentScene);
         SceneManager.LoadScene(currentScene);
     }
 }
