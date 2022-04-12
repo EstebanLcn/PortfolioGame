@@ -12,4 +12,9 @@ public class GameOverScreen : MonoBehaviour
     {
         SceneManager.LoadScene(currentScene);
     }
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("OpenScene");
+    }
 }

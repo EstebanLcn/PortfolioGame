@@ -76,7 +76,7 @@ public class Boss_Phase3 : StateMachineBehaviour
                         _objectToBeDestroyed = Instantiate(pointEffect[10]);
                         canLaser = false;
                         timeLeftBetweenSpawn = 0.5f;
-                        PlayerHealthController.instance.Die();
+                        PlayerHealthController.instance.Disappear();
                     }
                     else
                     {
@@ -103,7 +103,7 @@ public class Boss_Phase3 : StateMachineBehaviour
                     }
                     if(counterShake == 10)
                     {
-                        LevelChanger.instance.FadeToLevel(2);
+                        LevelChanger.instance.FadeToLevel(3);
                     }
                 }
                 

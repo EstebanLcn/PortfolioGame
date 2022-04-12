@@ -7,7 +7,7 @@ public class TriggerToLastScene : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-            LevelChangerBlackFade.instance.FadeToLevel(4);
+            LevelChangerBlackFade.instance.FadeToLevel(5);
         }
     }
 }

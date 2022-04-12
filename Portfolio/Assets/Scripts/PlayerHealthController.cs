@@ -91,6 +91,11 @@ public class PlayerHealthController : MonoBehaviour
         SceneManager.LoadScene("GameOverScene");
         GameOverScreen.currentScene = SceneManager.GetActiveScene().name;
     }
+    public void Disappear()
+    {
+        currentHealth = 0;
+        gameObject.SetActive(false);
+    }
 }
       
 

@@ -63,7 +63,7 @@ public class DialoguePanel : MonoBehaviour
                 SceneManager.LoadScene("ScenePlatformer");
             }else if(SceneManager.GetActiveScene().name == "FinishScene")
             {
-                SceneManager.LoadScene("SceneFirst");
+                SceneManager.LoadScene("OpenScene");
             }
         }
     }

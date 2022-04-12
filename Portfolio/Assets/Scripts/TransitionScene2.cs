@@ -6,6 +6,6 @@ public class TransitionScene2 : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        LevelChangerBlackFade.instance.FadeToLevel(1);
+        LevelChangerBlackFade.instance.FadeToLevel(2);
     }
 }
