@@ -27033,12 +27033,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4370976361147625876, guid: 124ce102e7d6fd4438d65286fa65248f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4370976361147625876, guid: 124ce102e7d6fd4438d65286fa65248f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.5
+      value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 4370976361147625876, guid: 124ce102e7d6fd4438d65286fa65248f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370976361147625876, guid: 124ce102e7d6fd4438d65286fa65248f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370976361147625877, guid: 124ce102e7d6fd4438d65286fa65248f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8bfaf5fcf7fa68848a8c8afa4f3b45a8, type: 3}
     - target: {fileID: 4370976362418344374, guid: 124ce102e7d6fd4438d65286fa65248f, type: 3}
       propertyPath: m_Name
       value: BossLast

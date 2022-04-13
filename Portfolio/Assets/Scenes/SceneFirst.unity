@@ -10521,7 +10521,7 @@ PrefabInstance:
       objectReference: {fileID: 1103208779}
     - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
       propertyPath: lines.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
       propertyPath: lines.Array.data[0]
@@ -10539,26 +10539,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
       propertyPath: lines.Array.data[3]
+      value: Don't doubt that during the fight, the monster metaphorized himself
+        as Esteban Lecuona.
+      objectReference: {fileID: 0}
+    - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
+      propertyPath: lines.Array.data[4]
       value: As a reminder, Esteban Lecuona is a 4th year student in engineering
         school with a passion for computer science and especially development.
       objectReference: {fileID: 0}
     - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
-      propertyPath: lines.Array.data[4]
+      propertyPath: lines.Array.data[5]
       value: He is serious, autonomous, enduring and is looking for a professionalization
         contract.
       objectReference: {fileID: 0}
     - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
-      propertyPath: lines.Array.data[5]
+      propertyPath: lines.Array.data[6]
       value: All our troops were destroyed by the monster but some of them gave us
         valuable information
       objectReference: {fileID: 0}
     - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
-      propertyPath: lines.Array.data[6]
+      propertyPath: lines.Array.data[7]
       value: You can find them next to the entrance behind me on the signs. You will
         also find them on your skills.
       objectReference: {fileID: 0}
     - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
-      propertyPath: lines.Array.data[7]
+      propertyPath: lines.Array.data[8]
       value: Good luck recruit !
       objectReference: {fileID: 0}
     - target: {fileID: 712521208251014680, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
