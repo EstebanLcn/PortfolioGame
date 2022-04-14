@@ -129,6 +129,7 @@ public class Boss_Phase2 : StateMachineBehaviour
                     tilemap.color = new Color(1f, 1f, 1f, 1f);
                     player.color = new Color(1f, 1f, 1f, 1f);
                     timeLeftReset = 2f;
+                    PlayerHealthController.instance.isInvincible = false;
                     if (index == 2)
                     {
                         index = 0;
@@ -164,6 +165,7 @@ public class Boss_Phase2 : StateMachineBehaviour
         Destroy(circleOutside3, 0.1f);
         tilemap.color = new Color(1f, 1f, 1f, 1f);
         player.color = new Color(1f, 1f, 1f, 1f);
+        PlayerHealthController.instance.isInvincible = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

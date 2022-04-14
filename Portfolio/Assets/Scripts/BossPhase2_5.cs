@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class BossPhase2_5 : StateMachineBehaviour
@@ -9,6 +10,8 @@ public class BossPhase2_5 : StateMachineBehaviour
     GameObject player;
 
     public GameObject[] words;
+
+    Tilemap tilemap;
 
     private float _timeBetweenSpawn;
     private GameObject _objectToBeDestroyed;
@@ -78,6 +81,8 @@ public class BossPhase2_5 : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        tilemap = GameObject.Find("Ground").GetComponent<Tilemap>();
+        tilemap.color = new Color(1f, 1f, 1f, 1f);
         child.SetActive(false);
         m_OrthographicCamera.orthographicSize = 11.85284f;
         CameraFollow.instance.offset = new Vector3(7, 0, -10);
