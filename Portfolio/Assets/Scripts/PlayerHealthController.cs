@@ -51,7 +51,6 @@ public class PlayerHealthController : MonoBehaviour
                 {
                     invicibleCounter = invicibleLength;
                     theSr.color = new Color(theSr.color.r, theSr.color.g, theSr.color.b, .5f);
-                    Debug.Log(theSr.color);
                 }
                 UIController.instance.UpdateHealthDisplay();
             }
