@@ -671,7 +671,7 @@ MonoBehaviour:
   - {fileID: 4885861057404101364, guid: 90accce1cb77fd341b6e3d5bad37c75d, type: 3}
   - {fileID: 1311017766284018224, guid: 4b5c95767c8424d42aa4fad2c2eb72e0, type: 3}
   - {fileID: 5314872886975141316, guid: a44b69031eb97944bbfe887f3f062c6c, type: 3}
-  _startTimeBetweenSpawn: 1
+  _startTimeBetweenSpawn: 6
   spawnPointLeft: {fileID: 3233836757113917670, guid: 0e360d693010dfc40a0ecf42ef2dc904, type: 3}
   spawnPointRight: {fileID: 918784699940857607, guid: 3a71e35011cdb7b41b72975c6d9195da, type: 3}
   animator: {fileID: 0}

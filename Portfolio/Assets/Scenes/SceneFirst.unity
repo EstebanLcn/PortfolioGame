@@ -10710,11 +10710,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 712521208356483843}
   lines:
-  - Z Q S D to move the player
-  - 'Shoot : Left click'
+  - Z Q S D to move the player.
+  - 'Shoot : Left click.'
   - 'Spell 1: Press F to fire a huge fireball.'
   - 'Spell 2: Press C to heal yourself.'
-  - 'Spell 3: Press V to run faster.'
   - 'Spell 3: Press V to run faster.'
   textSpeed: 0.1
   doors: {fileID: 0}
