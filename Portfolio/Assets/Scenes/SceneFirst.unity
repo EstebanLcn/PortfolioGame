@@ -10063,7 +10063,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8aace6a2554b26047bc96523772ca7ff, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10555,7 +10555,7 @@ PrefabInstance:
     - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
       propertyPath: lines.Array.data[6]
       value: All our troops were destroyed by the monster but some of them gave us
-        valuable information
+        valuable information.
       objectReference: {fileID: 0}
     - target: {fileID: 712521208215543859, guid: 17e3dff77e35c9c4da1ba704b4bfd626, type: 3}
       propertyPath: lines.Array.data[7]
@@ -10710,8 +10710,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 712521208356483843}
   lines:
+  - Z Q S D to move the player
+  - 'Shoot : Left click'
   - 'Spell 1: Press F to fire a huge fireball.'
   - 'Spell 2: Press C to heal yourself.'
+  - 'Spell 3: Press V to run faster.'
   - 'Spell 3: Press V to run faster.'
   textSpeed: 0.1
   doors: {fileID: 0}

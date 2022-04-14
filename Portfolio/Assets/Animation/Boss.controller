@@ -47,32 +47,6 @@ MonoBehaviour:
   - {fileID: 3557100212482903421, guid: cb61e6045f5e07b43b037d743a8b1f34, type: 3}
   - {fileID: 39094484622834901, guid: e1500dd76d59e064fb2a1e1ef4f85976, type: 3}
   _startTimeBetweenSpawn: 1.5
---- !u!1102 &-8375823067252960464
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: BossPhase2
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2fe65fe5b9b94fb4591489da3c30bea0, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &-7957961214917285561
 AnimatorState:
   serializedVersion: 6
@@ -110,7 +84,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 395
+    m_EventTreshold: 295
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4960085071939246357}
   m_Solo: 0
@@ -187,7 +161,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 390
+    m_EventTreshold: 280
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1479957324690562198}
   m_Solo: 0
@@ -239,7 +213,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 420
+    m_EventTreshold: 400
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 950826379068277452}
   m_Solo: 0
@@ -483,7 +457,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 400
+    m_EventTreshold: 330
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2433113736732875690}
   m_Solo: 0
@@ -667,10 +641,7 @@ AnimatorStateMachine:
     m_Position: {x: 660, y: 460, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6010760077022675676}
-    m_Position: {x: 350, y: 490, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -8375823067252960464}
-    m_Position: {x: 385, y: 555, z: 0}
+    m_Position: {x: 360, y: 490, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -763,7 +734,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: health
-    m_EventTreshold: 380
+    m_EventTreshold: 80
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4037092714914707744}
   m_Solo: 0

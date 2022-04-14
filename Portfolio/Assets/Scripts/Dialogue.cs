@@ -26,6 +26,7 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
+                PlayerMovement2D.instance.enableY = true;
                 StopAllCoroutines();
                 textComponent.text = lines[index];
             }
@@ -36,6 +37,7 @@ public class Dialogue : MonoBehaviour
     {
         index = 0;
         StartCoroutine(TypeLine());
+        PlayerMovement2D.instance.enableY = false;
     }
 
     IEnumerator TypeLine()

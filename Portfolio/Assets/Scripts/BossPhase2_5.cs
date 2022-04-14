@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class BossPhase2_5 : StateMachineBehaviour
 {
     private string textUI = "BOSS PHASE SOFT SKILLS";
-    GameObject originalGameObject;
     GameObject child;
     GameObject childSlider;
     GameObject player;
@@ -26,17 +25,16 @@ public class BossPhase2_5 : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        PlayerMovement2D.instance.enableY = false;
         Text txt = GameObject.Find("Canvas/BossPhaseName").GetComponent<Text>();
         txt.text = textUI;
-        originalGameObject = GameObject.Find("Canvas");
-        child = originalGameObject.transform.GetChild(8).gameObject;
+        child = GameObject.Find("Canvas/ParentCinematic").transform.Find("CinematicBarsContainer").gameObject;
         child.SetActive(true);
         m_OrthographicCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         m_OrthographicCamera.orthographicSize = 7.0f;
         CameraFollow.instance.offset = new Vector3(0, 0, -10);
-        childSlider = originalGameObject.transform.GetChild(6).gameObject;
+        childSlider = GameObject.Find("Canvas/Slider").gameObject;
         childSlider.SetActive(false);
-        PlayerMovement2D.instance.enableY = false;
         player = GameObject.Find("Player");
         player.transform.position = new Vector3(0, 0, 0);
         MoveBoss.instance.enableMovement = false;
